@@ -13,6 +13,7 @@ const actions = {
         // we're fetching these from local storage on load. but this function could easily be modified to get favourites
         // from an API or other source
         const favourites = JSON.parse(window.localStorage.getItem('favourites'))
+        if (!favourites) return
 
         commit('setFavourites', favourites)
     },
